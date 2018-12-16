@@ -1,7 +1,7 @@
 /**
 * Imports
 */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=cyrillic');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=cyrillic");
 
 /**
 * Variables
@@ -34,6 +34,27 @@ html {
   max-width: 1140px;
   display: block;
   margin: 0 auto;
+}
+.wrapper {
+  opacity: 0;
+}
+
+.preload {
+  position: absolute;
+  z-index: 1000 !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    display: block;
+    width: 400px;
+    height: 300px;
+  }
 }
 
 header {
@@ -118,35 +139,26 @@ header {
   .image-header {
     width: 100%;
     position: relative;
-    // background-color: $primary-color;
     background-image: url("./../image/screen-1.jpg");
     background-size: contain;
     background-position: center right;
     background-repeat: no-repeat;
-
-    .overlay{
-      position: absolute;
-      z-index: 9;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(146,198,169, 0.5);
-    }
-    .container{
+    .container {
       z-index: 11;
       height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      h1{
+      h1 {
         text-transform: uppercase;
         color: #ffffff;
-        font-weight: 700;
+        font-weight: 100;
         line-height: 40px;
-        // text-shadow: 1px 1px 15px #333333;
         color: $primary-color;
       }
     }
   }
+}
+.services{
+  min-height: 100vh;
 }
