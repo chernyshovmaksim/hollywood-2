@@ -3,6 +3,8 @@
 */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=cyrillic');
 
+@import './media';
+
 /**
 * Variables
 */
@@ -276,5 +278,44 @@ footer{
     padding-top: 1em;
     padding-bottom: 1em;
     font-size: 0.7em;
+  }
+}
+
+.mobile-menu{
+  position: fixed;
+  right: 1em;
+  top: 2.5em;
+  z-index: 150;
+  width: 3em;
+  height: 3em;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  div{
+    width: 50%;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 2px;
+    position: relative;
+    &::before{
+      content: '';
+      display: block;
+      position: relative;
+      top: -8px;
+      height: 4px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 2px;
+    }
+    &::after{
+      content: '';
+      display: block;
+      position: relative;
+      top: 4px;
+      height: 4px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 2px;
+    }
   }
 }
