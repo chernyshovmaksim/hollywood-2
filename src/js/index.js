@@ -1,5 +1,5 @@
-import 'animate.css';
 import './../styles/main.scss';
+import 'animate.css';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'jquery.mmenu/dist/jquery.mmenu.css';
 
@@ -8,36 +8,18 @@ import 'jquery.mmenu/dist/jquery.mmenu';
 import 'jquery.mmenu/dist/addons/pagescroll/jquery.mmenu.pagescroll';
 import WOW from 'wow.js';
 import Header from './components/header';
+import Mmenu from './components/mmenu';
+import Owl from './components/owl';
 import Preload from './components/preload';
 import Parallax from './components/parallax';
+import Lazyload from './components/lazyload';
 
 $(document).ready(() => {
+	Mmenu();
   new WOW().init();
   Preload();
   Parallax();
 	Header.headerFullScreen();
-	
-	$('#my-menu').mmenu({
-		"pageScroll": true
-	});
-	const API = $("#my-menu").data( "mmenu" );
-	$('.mobile-menu').on('click', () => {
-		API.open();
-	});
-
-  $('.owl-carousel').owlCarousel({
-		responsive: {
-			0: {
-				items: 1,
-				nav: true
-			},
-			560: {
-				items: 2,
-				nav: true
-			},
-			812: {
-				items: 3
-			}
-		}
-	});
+  Owl();
+  Lazyload();
 });

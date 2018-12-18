@@ -1,18 +1,18 @@
 export default () => {
-  var images = document.querySelectorAll('.lazyload');
-  var options = {
-    rootMargin: '100px',
-    threshold: 0.5
+  const images = document.querySelectorAll('.lazyload');
+  const options = {
+    rootMargin: '0px',
+    threshold: 0.1
   };
-  var callback = function(entries, observer) {
+  const callback = function(entries, observer) {
     entries.forEach(entry => {
       entry.target.setAttribute(
         'src',
-        entry.target.getAttribute('data-original')
+        entry.target.getAttribute('data-src')
       );
     });
   };
-  var observer = new IntersectionObserver(callback, options);
+  const observer = new IntersectionObserver(callback, options);
 
   images.forEach(image => {
     observer.observe(image);
